@@ -28,6 +28,16 @@ jobs:
       - name: Install dependencies
         run: uv sync --all-extras
 
+      - name: Verify plugin installation
+        run: |
+          uv run python -c "import importlib.metadata; eps = list(importlib.metadata.entry_points().select(group='geoparquet_io.plugins')); print('Entry points:', eps); assert len(eps) > 0, 'No plugins found'"
+          uv run gpio --help
+
+      - name: Install tippecanoe
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tippecanoe
+
       - name: Run tests
         run: uv run pytest -v
 
