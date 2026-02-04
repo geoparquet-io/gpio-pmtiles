@@ -32,6 +32,15 @@ jobs:
       - name: Run linter
         run: uv run ruff check .
 
+      # Non-blocking complexity checks
+      - name: Check code complexity (informational)
+        run: uv run xenon --max-absolute=E --max-modules=D --max-average=C gpio_pmtiles tests
+        continue-on-error: true
+
+      - name: Check for dead code (informational)
+        run: uv run vulture gpio_pmtiles tests
+        continue-on-error: true
+
       - name: Build package
         run: uv build
 
