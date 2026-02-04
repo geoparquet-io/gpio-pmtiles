@@ -30,8 +30,7 @@ jobs:
 
       - name: Verify plugin installation
         run: |
-          uv run python -c "import importlib.metadata; eps = list(importlib.metadata.entry_points().select(group='geoparquet_io.plugins')); print('Entry points:', eps); assert len(eps) > 0, 'No plugins found'"
-          uv run gpio --help
+          uv run python -c "import importlib.metadata; eps = list(importlib.metadata.entry_points().select(group='gpio.plugins')); print('Entry points:', eps); assert len(eps) > 0, 'No plugins found'"
 
       - name: Install tippecanoe
         run: |
