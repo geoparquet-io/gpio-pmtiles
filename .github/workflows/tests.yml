@@ -10,6 +10,7 @@ jobs:
   test:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: ["3.10", "3.11", "3.12"]
@@ -32,10 +33,19 @@ jobs:
         run: |
           uv run python -c "import importlib.metadata; eps = list(importlib.metadata.entry_points().select(group='gpio.plugins')); print('Entry points:', eps); assert len(eps) > 0, 'No plugins found'"
 
-      - name: Install tippecanoe
+      - name: Install tippecanoe (Ubuntu)
+        if: runner.os == 'Linux'
         run: |
           sudo apt-get update
           sudo apt-get install -y tippecanoe
+
+      - name: Install tippecanoe (macOS)
+        if: runner.os == 'macOS'
+        run: brew install tippecanoe
+
+      - name: Note about tippecanoe (Windows)
+        if: runner.os == 'Windows'
+        run: echo "tippecanoe not available on Windows - integration tests will be skipped"
 
       - name: Run tests
         run: uv run pytest -v

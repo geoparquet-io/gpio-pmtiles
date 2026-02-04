@@ -23,6 +23,11 @@ jobs:
       - name: Install dependencies
         run: uv sync --all-extras
 
+      - name: Install tippecanoe
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tippecanoe
+
       - name: Run tests
         run: uv run pytest -v --tb=short
 
