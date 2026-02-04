@@ -600,10 +600,3 @@ gpio convert geojson input.parquet | head  # Should output GeoJSON
 - Refactor when complexity creeps up
 - Extract, don't expand
 
----
-
-> "Make it work, make it right, make it fast — in that order."
-> — Kent Beck
-
-> "Code is read much more often than it is written."
-> — Guido van Rossum

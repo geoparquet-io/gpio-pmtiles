@@ -1,6 +1,5 @@
 # gpio-pmtiles
 
-[![Tests](https://github.com/geoparquet/gpio-pmtiles/actions/workflows/tests.yml/badge.svg)](https://github.com/geoparquet/gpio-pmtiles/actions/workflows/tests.yml)
 [![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](https://github.com/geoparquet/gpio-pmtiles)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/geoparquet/gpio-pmtiles/blob/main/LICENSE)
 [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
@@ -159,6 +158,7 @@ gpio pmtiles create data.parquet output.pmtiles --precision 5
 ```
 
 ## Development
+Contributions are welcome! See [CLAUDE.md](CLAUDE.md) for development guidelines
 
 ```bash
 # Clone and install
@@ -174,13 +174,6 @@ uv run ruff format .
 uv run ruff check --fix .
 ```
 
-See [CLAUDE.md](CLAUDE.md) for detailed development guidelines including:
-- TDD workflow
-- Git conventions
-- Code quality standards
-- Testing strategy
-- Security best practices
-
 ## Related Documentation
 
 - **[geoparquet-io Documentation](https://geoparquet.io/)** - Full user guide and API reference
@@ -188,14 +181,6 @@ See [CLAUDE.md](CLAUDE.md) for detailed development guidelines including:
 - [tippecanoe documentation](https://github.com/felt/tippecanoe) - Tile generation options
 - [PMTiles specification](https://github.com/protomaps/PMTiles) - PMTiles format details
 
-## Contributing
-
-Contributions are welcome! See [CLAUDE.md](CLAUDE.md) for development guidelines including:
-- Research-first workflow
-- Test-driven development (TDD)
-- Git conventions and commit standards
-- Code quality and complexity limits
-- Security best practices
 
 ## Links
 
