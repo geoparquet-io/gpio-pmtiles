@@ -1,5 +1,9 @@
 # gpio-pmtiles
 
+> **⚠️ DEPRECATED:** This plugin is deprecated. PMTiles support is now built into [geoparquet-io](https://github.com/geoparquet/geoparquet-io) core.
+> Use `gpio pmtiles create` (CLI) or `geoparquet_io.api.ops.create_pmtiles()` (Python).
+> See the [GeoJSON guide](https://geoparquet.io/guide/geojson/#using-gpio-pmtiles-built-in) for usage.
+
 [![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](https://github.com/geoparquet/gpio-pmtiles)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/geoparquet/gpio-pmtiles/blob/main/LICENSE)
 [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
